@@ -11,5 +11,10 @@ async function bootstrap() {
   });
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Accept',
+  });
 }
 bootstrap();
